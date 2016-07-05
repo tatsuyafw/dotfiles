@@ -92,6 +92,7 @@ NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'Align',
 NeoBundle 'markcornick/vim-bats'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'scrooloose/syntastic'
 " NeoBundle 'Blackrush/vim-gocode'
 NeoBundleLazy 'dag/vim2hs'
 NeoBundleLazy 'derekwyatt/vim-scala'
@@ -127,6 +128,8 @@ endif
 autocmd BufNewFile,BufRead *.go setlocal filetype=go
 autocmd FileType go setlocal tabstop=2 shiftwidth=2
 let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " neosnippet.vim
 " Plugin key-mappings.
