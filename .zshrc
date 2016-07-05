@@ -76,8 +76,8 @@ else
 fi
 
 # 補完の利用設定
-autoload -U compinit
-compinit
+autoload -Uz compinit
+compinit -u
 
 # C-s, C-qを無効にする。
 setopt NO_flow_control
