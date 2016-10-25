@@ -213,4 +213,8 @@ bindkey '^]' peco-src
 # Unset for zaw
 unsetopt sh_word_split
 
+# Item2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# AWS CLI
+test -e "/usr/local/bin/aws_zsh_completer.sh" && source "/usr/local/bin/aws_zsh_completer.sh"
