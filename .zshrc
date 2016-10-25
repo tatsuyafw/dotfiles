@@ -212,3 +212,5 @@ bindkey '^]' peco-src
 
 # Unset for zaw
 unsetopt sh_word_split
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
