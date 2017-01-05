@@ -71,8 +71,8 @@ export PATH=$HOME/bin:$PATH
 if test -f ~/.mac_alias; then
     source ~/.mac_alias
 else
-    alias ls="ls -F --color"
-    alias ll="ls -alhF --color"
+    alias ls="ls -F -G"
+    alias ll="ls -alhF -G"
 fi
 
 # 補完の利用設定
