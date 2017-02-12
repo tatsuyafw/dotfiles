@@ -124,6 +124,7 @@ setopt auto_menu
 
 # cd をしたときにls を実行する
 function chpwd() { ls }
+function chpwd() { ls; echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
 
 # Pager
 export PAGER="lv -c"
@@ -178,6 +179,8 @@ fi
 
 # Proxy の設定があれば読み込む
 [ -f ~/.proxy ] && source ~/.proxy
+
+[ -d ~/zsh/functions ] && FPATH="${HOME}/zsh/functions:${FPATH}"
 
 # zsh completion
 autoload -U compinit && compinit
