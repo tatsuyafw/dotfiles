@@ -212,6 +212,7 @@
 (el-get-bundle lua-mode)
 (el-get-bundle markdown-mode)
 ;; (el-get-bundle scala-mode2)
+(el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
 (el-get-bundle web-mode)
 (el-get-bundle yaml-mode)
@@ -429,8 +430,8 @@
   (add-to-list 'auto-mode-alist '("\\.\\(groovy\\|gradle\\)$" . groovy-mode)))
 
 ;; Scala
-;; (when (require 'scala-mode2)
-;;  (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode)))
+(when (require 'scala-mode)
+ (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode)))
 
 ;; Coffee
 (when (require 'coffee-mode)
