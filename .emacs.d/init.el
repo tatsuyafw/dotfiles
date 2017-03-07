@@ -53,6 +53,8 @@
 ;; C-q を other-window にする
 (define-key global-map (kbd "C-q") 'other-window)
 
+(define-key global-map [?¥] [?\\])
+
 ;; 反対側のウィンドウにいけるように
 (defvar windmove-wrap-around t)
 ;; C-M-{h,j,k,l}でウィンドウ間を移動
