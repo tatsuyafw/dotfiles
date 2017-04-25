@@ -207,6 +207,7 @@
 (el-get-bundle groovy-emacs-mode)
 (el-get-bundle haml-mode)
 ;; (el-get-bundle haskell-mode)
+(el-get-bundle helm-git-grep)
 (el-get-bundle js2-mode)
 (el-get-bundle json-mode)
 (el-get-bundle json-snatcher)
@@ -335,6 +336,8 @@
     (when (file-exists-p candidate)
       ad-do-it))
   )
+
+(require 'helm-git-grep)
 
 ;; ##### Ruby ######
 ;; 括弧の自動挿入
