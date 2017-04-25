@@ -406,6 +406,8 @@
 (add-to-list 'auto-mode-alist '("\\.ru$"  . ruby-mode))
 ;; #################
 
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; Haskell
 ;; (when (load "haskell-mode-autoloads")
 ;;   (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
