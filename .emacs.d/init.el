@@ -511,6 +511,10 @@
 ;; CSS
 (setq css-indent-offset 2)
 
+;; Shebang
+(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+
 ;; web-mode
 ;; http://web-mode.org/
 (when (require 'web-mode nil t)
