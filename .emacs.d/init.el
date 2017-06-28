@@ -433,8 +433,8 @@
 
 
 ;; Groovy
-(when (require 'groovy-mode)
-  (add-to-list 'auto-mode-alist '("\\.\\(groovy\\|gradle\\)$" . groovy-mode)))
+;; (when (require 'groovy-mode)
+;;   (add-to-list 'auto-mode-alist '("\\.\\(groovy\\|gradle\\)$" . groovy-mode)))
 
 ;; Scala
 (when (require 'scala-mode)
