@@ -11,3 +11,6 @@
 .vim/.netrwhist
 .vim/neobundle/*
 *.sw[a-z]
+
+# Neovim
+.vim/init.vim

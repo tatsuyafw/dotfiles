@@ -227,3 +227,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # AWS CLI
 test -e "/usr/local/bin/aws_zsh_completer.sh" && source "/usr/local/bin/aws_zsh_completer.sh"
+
+# Neovim
+export XDG_CONFIG_HOME=$HOME/.config

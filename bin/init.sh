@@ -18,6 +18,11 @@ cd $HOME/dotfiles
 git submodule update --init
 echo;
 
+: [Info] Set up Neovim
+mkdir -p $HOME/.config
+ln -s $HOME/.vim $HOME/.config/nvim
+ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
+
 : [Info] Vim NeoBundleInstall
 vim -S .vim/neobundleinstall.vim
 echo;
