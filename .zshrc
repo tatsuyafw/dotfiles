@@ -230,3 +230,6 @@ test -e "/usr/local/bin/aws_zsh_completer.sh" && source "/usr/local/bin/aws_zsh_
 
 # Neovim
 export XDG_CONFIG_HOME=$HOME/.config
+if command -v nvim > /dev/null; then
+  alias vim=nvim
+fi
