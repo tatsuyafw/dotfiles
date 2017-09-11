@@ -215,6 +215,7 @@
 (el-get-bundle lua-mode)
 (el-get-bundle markdown-mode)
 ;; (el-get-bundle scala-mode2)
+(el-get-bundle danielma/rufo.el)
 (el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
 (el-get-bundle web-mode)
@@ -398,7 +399,10 @@
   (inf-ruby-keys)
   ;;(ruby-electric-mode t)
   (require 'ruby-block)
-  (ruby-block-mode t))
+  (ruby-block-mode t)
+  (rufo-minor-mode)
+  )
+
 ;; ruby-mode-hook に追加
 (add-hook 'ruby-mode-hook 'ruby-mode-hooks)
 ;; extensions
