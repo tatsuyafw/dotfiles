@@ -62,6 +62,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias tree="tree -C"
 alias ec="emacsclient"
+alias be="bundle exec"
 #alias java="/usr/java/default/bin/java"
 #alias javac="/usr/java/default/bin/javac"
 
