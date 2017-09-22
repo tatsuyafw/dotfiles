@@ -218,12 +218,16 @@
 (el-get-bundle danielma/rufo.el)
 (el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
+(el-get-bundle ainame/smart-newline.el)
 (el-get-bundle web-mode)
 (el-get-bundle yaml-mode)
 (el-get-bundle yasnippet)
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; smart-newline https://github.com/ainame/smart-newline.el
+(define-key global-map (kbd "C-o") 'smart-newline)
 
 ;; auto-install の設定
 ;; (cond
