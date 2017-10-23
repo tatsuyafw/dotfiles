@@ -2,6 +2,9 @@
 
 basedir=`dirname $0`/../..
 
+mkdir -p $HOME/.config
+cp -r .config/powerline $HOME/.config/
+
 FILE_LIST=(.eslintrc.json .emacs.d .pryrc .pylintrc .rspec .screenrc .tmux.conf .vimrc .vim .zshrc)
 
 : [Info] Set synblic link
