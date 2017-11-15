@@ -93,12 +93,12 @@ NeoBundle 'Align',
 NeoBundle 'markcornick/vim-bats'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'vim-coffee-script'
 " NeoBundle 'Blackrush/vim-gocode'
 NeoBundleLazy 'dag/vim2hs'
 NeoBundleLazy 'derekwyatt/vim-scala'
 NeoBundleLazy 'elzr/vim-json'
 NeoBundleLazy 'mattn/emmet-vim'
-NeoBundleLazy 'vim-coffee-script'
 
 filetype plugin indent on
 " ### END NeoBundle ###
