@@ -16,7 +16,6 @@
         (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
             (normal-top-level-add-subdirs-to-load-path))))))
 
-(defvar emacs23-p (<= emacs-major-version 23))  ; 23 以下
 (defvar emacs24-p (>= emacs-major-version 24))  ; 24 以上
 (defvar darwin-p (eq system-type 'darwin))      ; Mac OS X 用
 (defvar nt-p (eq system-type 'windows-nt))      ; Windows 用
@@ -63,23 +62,9 @@
 (define-key global-map (kbd "C-M-l") 'windmove-right)
 (define-key global-map (kbd "C-M-h") 'windmove-left)
 
-; (when emacs23-p
-;   (when (require 'redo+ nil t)
-;     ;; C-M-_' にリドゥに割り当てる
-;     (define-key global-map (kbd "C-M-_") 'redo)
-;     ))
 ;; ターミナルの場合、molokai を使う
 (cond
   ((null window-system)
-   (when emacs23-p
-     (require 'color-theme-molokai)
-     (color-theme-molokai)
-     ;; customize
-     (set-face-foreground 'font-lock-function-name-face "#5EC84E")
-     (set-face-foreground 'font-lock-type-face "#FF8700")
-     (set-face-foreground 'font-lock-string-face "#CCCCAC")
-     (set-face-foreground 'font-lock-comment-face "#A6A4A7")
-     )
    (when emacs24-p
      (setq custom-theme-directory "~/.emacs.d/themes/")
      (load-theme 'molokai t)
@@ -306,13 +291,6 @@
 ;; 環境に応じて適切な ***-config.el ファイルを読み込む
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf") ; 設定ファイルがあるディレクトリを指定
-
-;; redo+ の設定
-(when emacs23-p
-  (when (require 'redo+ nil t)
-    ;; C-M-_' にリドゥに割り当てる
-    (define-key global-map (kbd "C-M-_") 'redo)
-    ))
 
 ;; shell-mode でエスケープを綺麗に表示
 (autoload 'ansi-color-for-comint-mode-on "ansi-color"
