@@ -40,9 +40,6 @@
 (define-key isearch-mode-map [compend] 'w32-isearch-update)
 (define-key isearch-mode-map [kanji] 'isearch-toggle-input-method)
 
-;; 起動直後の find-file のパスを ~/ にする
-(cd "~/")
-
 ;; C-h をバックスペースにする
 (define-key global-map (kbd "C-h") 'delete-backward-char)
 ;; C-j を newline-and-indent にする
