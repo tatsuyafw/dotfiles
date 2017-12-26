@@ -64,48 +64,40 @@ endif
 " ruby
 autocmd BufNewFile,BufRead *.ru set filetype=ruby
 
-" ##### NeoBundle #####
-set nocompatible
-filetype off
+" dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-let g:neobundle_default_git_protocol='https'
+if dein#load_state('$HOME/.cache/dein')
+  call dein#begin('$HOME/.cache/dein')
 
-set rtp+=~/dotfiles/neobundle.vim
-if has('vim_starting')
-  set runtimepath+=~/dotfiles/neobundle.vim
-  call neobundle#rc(expand('~/.vim/neobundle/'))
+  " Let dein manage dein
+  call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  call dein#add('Shougo/deol.nvim')
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('junegunn/vim-easy-align')
+  call dein#add('kchmck/vim-coffee-script')
+  call dein#add('tomtom/tcomment_vim')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('vim-scripts/molokai')
+  call dein#add('vim-syntastic/syntastic')
+
+  call dein#end()
+  call dein#save_state()
 endif
 
-NeoBundle 'molokai'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'violetyk/neosnippet-aws-cloud-formation'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'Align',
-NeoBundle 'markcornick/vim-bats'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'vim-coffee-script'
-" NeoBundle 'Blackrush/vim-gocode'
-NeoBundleLazy 'dag/vim2hs'
-NeoBundleLazy 'derekwyatt/vim-scala'
-NeoBundleLazy 'elzr/vim-json'
-NeoBundleLazy 'mattn/emmet-vim'
-
 filetype plugin indent on
-" ### END NeoBundle ###
+syntax enable
 
-" molokai
-set t_Co=256
-colorscheme molokai
+if dein#check_install()
+  call dein#install()
+endif
+" End dein.vim
 
 " omnifunc
 setlocal omnifunc=syntaxcomplete#Complete
@@ -116,15 +108,6 @@ let g:neocomplcache_enable_at_startup = 1
 " vim-json
 au! BufRead,BufNewFile *.json set filetype=json
 
-" Unite key bindings
-noremap <C-i> :Unite buffer<CR>
-noremap <C-m> :Unite file_mru<CR>
-noremap <C-k> :Unite -buffer-name=file file<CR>
-
-" Go lang
-if (isdirectory(expand('$GOROOT')))
-  NeoBundle 'go', {'type' : 'nosync', 'base' : '~/.vim/neobundle'}
-endif
 autocmd BufNewFile,BufRead *.go setlocal filetype=go
 autocmd FileType go setlocal tabstop=2 shiftwidth=2
 let g:go_fmt_command = "goimports"
@@ -149,6 +132,15 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+" molokai
+set t_Co=256
+colorscheme molokai
+
+" Unite key bindings
+noremap <C-i> :Unite buffer<CR>
+noremap <C-m> :Unite file_mru<CR>
+noremap <C-k> :Unite -buffer-name=file file<CR>
 
 if has('nvim')
   set termguicolors
