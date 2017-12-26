@@ -23,8 +23,10 @@ echo;
 
 : [Info] Set up Neovim
 mkdir -p $HOME/.config
-ln -s $HOME/.vim $HOME/.config/nvim
-ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
+if [ ! -e $HOME/.config/nvim ]; then
+  ln -s $HOME/.vim $HOME/.config/nvim
+  ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
+fi
 
 : [Info] Set up dein.vim
 tmp=$(mktemp)
