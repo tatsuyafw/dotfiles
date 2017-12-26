@@ -100,9 +100,6 @@ setlocal omnifunc=syntaxcomplete#Complete
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
-" vim-json
-au! BufRead,BufNewFile *.json set filetype=json
-
 autocmd BufNewFile,BufRead *.go setlocal filetype=go
 autocmd FileType go setlocal tabstop=2 shiftwidth=2
 let g:go_fmt_command = "goimports"
