@@ -4,11 +4,6 @@
 set nocompatible
 set number
 
-" syntax highlight
-if &t_Co > 1
-  syntax enable
-endif
-
 " backspace
 set backspace=2
 
