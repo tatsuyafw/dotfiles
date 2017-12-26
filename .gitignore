@@ -9,7 +9,7 @@
 
 # vim
 .vim/.netrwhist
-.vim/neobundle/*
+.vim/plugin/
 *.sw[a-z]
 
 # Neovim

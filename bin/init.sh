@@ -23,16 +23,13 @@ echo;
 
 : [Info] Set up Neovim
 mkdir -p $HOME/.config
-ln -s $HOME/.vim $HOME/.config/nvim
-ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
-
-: [Info] Vim NeoBundleInstall
-vim -S .vim/neobundleinstall.vim
-echo;
-
-: [Info] Vim Set golang
-if [ ! -e $HOME/.vim/neobundle/go ]; then
-  if [ -n "$GOROOT" ]; then
-    ln -s $GOROOT/misc/vim $HOME/.vim/neobundle/go
-  fi
+if [ ! -e $HOME/.config/nvim ]; then
+  ln -s $HOME/.vim $HOME/.config/nvim
+  ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
 fi
+
+: [Info] Set up dein.vim
+tmp=$(mktemp)
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $tmp
+sh $tmp $HOME/.cache/dein
+echo;
