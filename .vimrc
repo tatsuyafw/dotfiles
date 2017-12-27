@@ -86,7 +86,6 @@ if dein#load_state('$HOME/.cache/dein')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
-    let g:deoplete#enable_at_startup = 1
   endif
 
   call dein#end()
@@ -104,8 +103,11 @@ endif
 " omnifunc
 setlocal omnifunc=syntaxcomplete#Complete
 
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+" python3
+let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/shims/python')
 
 autocmd BufNewFile,BufRead *.go setlocal filetype=go
 autocmd FileType go setlocal tabstop=2 shiftwidth=2
