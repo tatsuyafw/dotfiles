@@ -37,15 +37,15 @@ set wildmode=list,full
 autocmd BufWritePre * :%s/\s\+$//e
 
 " cursor highlight
-set cursorline
-augroup cch
-  autocmd! cch
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter,BufRead * set cursorline
-augroup END
-hi clear CursorLine
-hi CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
+"set cursorline
+"augroup cch
+"  autocmd! cch
+"  autocmd WinLeave * set nocursorline
+"  autocmd WinEnter,BufRead * set cursorline
+"augroup END
+"hi clear CursorLine
+"hi CursorLine gui=underline
+"highlight CursorLine ctermbg=black guibg=black
 
 " tmux (background color erase)
 set t_ut=
