@@ -69,7 +69,6 @@ if dein#load_state('$HOME/.cache/dein')
   call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('Shougo/deol.nvim')
-  call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
@@ -82,6 +81,13 @@ if dein#load_state('$HOME/.cache/dein')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('vim-scripts/molokai')
   call dein#add('vim-syntastic/syntastic')
+
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+    let g:deoplete#enable_at_startup = 1
+  endif
 
   call dein#end()
   call dein#save_state()
