@@ -68,11 +68,11 @@ if dein#load_state('$HOME/.cache/dein')
   " Let dein manage dein
   call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
+  call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/deol.nvim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/unite.vim')
   call dein#add('fatih/vim-go')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('kchmck/vim-coffee-script')
