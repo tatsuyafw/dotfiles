@@ -430,8 +430,8 @@
   )
 
 ;; Visual Basic
-(when (require 'visual-basic-mode nil t)
-  (add-to-list 'auto-mode-alist '("\\.\\(frm\\|bas\\|cls\\|vbs\\|vba\\|xla\\)$" . visual-basic-mode)))
+;; (when (require 'visual-basic-mode nil t)
+;;   (add-to-list 'auto-mode-alist '("\\.\\(frm\\|bas\\|cls\\|vbs\\|vba\\|xla\\)$" . visual-basic-mode)))
 
 ;; Haml
 (when (require 'haml-mode nil t)
