@@ -113,6 +113,9 @@
 ;; インデントを tab ではなく空白で行う
 (setq-default indent-tabs-mode nil)
 
+;; 行末の空白削除
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; emacs-nav
 (require 'nav)
 (global-set-key "\C-x\C-d" 'nav-toggle)
