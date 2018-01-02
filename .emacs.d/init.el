@@ -202,6 +202,7 @@
 ;; (el-get-bundle scala-mode2)
 (el-get-bundle danielma/rufo.el)
 (el-get-bundle pezra/rspec-mode)
+(el-get-bundle nlamirault/ripgrep.el)
 (el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
 (el-get-bundle ainame/smart-newline.el)
