@@ -193,6 +193,7 @@
 (el-get-bundle haml-mode)
 ;; (el-get-bundle haskell-mode)
 (el-get-bundle helm-git-grep)
+(el-get-bundle inf-ruby)
 (el-get-bundle js2-mode)
 (el-get-bundle json-mode)
 (el-get-bundle json-snatcher)
@@ -200,9 +201,10 @@
 (el-get-bundle lua-mode)
 (el-get-bundle markdown-mode)
 ;; (el-get-bundle scala-mode2)
-(el-get-bundle danielma/rufo.el)
-(el-get-bundle pezra/rspec-mode)
 (el-get-bundle nlamirault/ripgrep.el)
+(el-get-bundle dgutov/robe)
+(el-get-bundle pezra/rspec-mode)
+(el-get-bundle danielma/rufo.el)
 (el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
 (el-get-bundle ainame/smart-newline.el)
@@ -392,6 +394,9 @@
 ;; extensions
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru$"  . ruby-mode))
+; robe
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'robe-mode-hook 'ac-robe-setup)
 ;; #################
 
 (setq ruby-insert-encoding-magic-comment nil)
