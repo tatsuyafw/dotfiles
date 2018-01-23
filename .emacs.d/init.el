@@ -204,6 +204,7 @@
 (el-get-bundle nlamirault/ripgrep.el)
 (el-get-bundle dgutov/robe)
 (el-get-bundle pezra/rspec-mode)
+(el-get-bundle ruby-block)
 (el-get-bundle danielma/rufo.el)
 (el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
@@ -327,12 +328,6 @@
 (require 'helm-git-grep)
 
 ;; ##### Ruby ######
-;; 括弧の自動挿入
-;; (require 'ruby-electric nil t)
-;; end に対応する行のハイライト
-;; (when (require 'ruby-block nil t)
-;;   (setq ruby-block-highlight-toggle t))
-;; インタラクティブ Ruby を利用する
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby Process")
 (autoload 'inf-ruby-keys "inf-ruby"
@@ -383,9 +378,9 @@
 (defun ruby-mode-hooks ()
   "."
   (inf-ruby-keys)
-  ;;(ruby-electric-mode t)
   (require 'ruby-block)
   (ruby-block-mode t)
+  (setq ruby-block-highlight-toggle t)
   (rufo-minor-mode)
   )
 
