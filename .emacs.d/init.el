@@ -328,10 +328,10 @@
 (require 'helm-git-grep)
 
 ;; ##### Ruby ######
-(autoload 'run-ruby "inf-ruby"
-  "Run an inferior Ruby Process")
-(autoload 'inf-ruby-keys "inf-ruby"
-  "Set local key defs for inf-ruby in ruby-mode")
+;; (autoload 'run-ruby "inf-ruby"
+;;   "Run an inferior Ruby Process")
+;; (autoload 'inf-ruby-keys "inf-ruby"
+;;   "Set local key defs for inf-ruby in ruby-mode")
 
 ;; align for ruby
 (require 'align)
@@ -377,7 +377,7 @@
 ;; ruby-mode-hook 用の関数を定義
 (defun ruby-mode-hooks ()
   "."
-  (inf-ruby-keys)
+  ;; (inf-ruby-keys)
   (require 'ruby-block)
   (ruby-block-mode t)
   (setq ruby-block-highlight-toggle t)
