@@ -59,19 +59,6 @@
 (define-key global-map (kbd "C-M-l") 'windmove-right)
 (define-key global-map (kbd "C-M-h") 'windmove-left)
 
-;; ターミナルの場合、molokai を使う
-(cond
-  ((null window-system)
-   (when emacs24-p
-     (setq custom-theme-directory "~/.emacs.d/themes/")
-     (load-theme 'molokai t)
-     ; (package-initialize)
-     ; (require 'color-theme)
-     ; (color-theme-initialize)
-     )
-   )
-  )
-
 ;; ターミナル以外の場合
 (when window-system
   (tool-bar-mode 0)
@@ -201,6 +188,7 @@
 (el-get-bundle lua-mode)
 (el-get-bundle markdown-mode)
 ;; (el-get-bundle scala-mode2)
+(el-get-bundle monokai-theme)
 (el-get-bundle nlamirault/ripgrep.el)
 (el-get-bundle dgutov/robe)
 (el-get-bundle pezra/rspec-mode)
@@ -213,6 +201,9 @@
 (el-get-bundle web-mode)
 (el-get-bundle yaml-mode)
 (el-get-bundle yasnippet)
+
+;; monokai
+(load-theme 'monokai t)
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
