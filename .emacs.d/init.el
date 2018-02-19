@@ -209,6 +209,7 @@
 (el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
 (el-get-bundle ainame/smart-newline.el)
+(el-get-bundle ananthakumaran/tide)
 (el-get-bundle web-mode)
 (el-get-bundle yaml-mode)
 (el-get-bundle yasnippet)
@@ -489,6 +490,26 @@
 ;; Slim
 (when (require 'slim-mode nil t)
   (add-to-list 'auto-mode-alist '("\\.slim$" . slim-mode)))
+
+;; ;;; TypeScript
+(defun setup-tide-mode ()
+  "Tide."
+  (interactive)
+  (tide-setup)
+  ;; (flycheck-mode +1)
+  ;; (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  ;; (eldoc-mode +1)
+  ;; (tide-hl-identifier-mode +1)
+  (company-mode +1)
+  )
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+;; formats the buffer before saving
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 ;; Yaml
 (when (require 'yaml-mode nil t)
