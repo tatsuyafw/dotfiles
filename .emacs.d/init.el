@@ -286,6 +286,9 @@
 ;; C-sで絞り込む
 (define-key company-active-map (kbd "C-s") 'company-filter-candidates)
 
+;; C-hで文字が削除できるようにする
+(define-key company-active-map (kbd "C-h") nil)
+
 ;; TABで候補を設定
 (define-key company-active-map (kbd "C-i") 'company-complete-selection)
 
