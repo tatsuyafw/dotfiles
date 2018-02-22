@@ -399,7 +399,8 @@
   (require 'ruby-block)
   (ruby-block-mode t)
   (setq ruby-block-highlight-toggle t)
-  (rufo-minor-mode)
+  ;; Disable rufo by default
+  ;; (rufo-minor-mode)
   )
 
 ;; ruby-mode-hook に追加
