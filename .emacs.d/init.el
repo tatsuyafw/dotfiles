@@ -175,6 +175,7 @@
 (el-get-bundle emacswiki:visual-basic-mode)
 (el-get-bundle emmet-mode)
 (el-get-bundle flycheck)
+(el-get-bundle sshaw/git-link)
 (el-get-bundle go-mode)
 (el-get-bundle groovy-emacs-mode)
 (el-get-bundle haml-mode)
@@ -210,6 +211,10 @@
 
 ;; smart-newline https://github.com/ainame/smart-newline.el
 (define-key global-map (kbd "C-o") 'smart-newline)
+
+;; git-link
+;; https://github.com/sshaw/git-link
+(setq git-link-open-in-browser t)
 
 ;; auto-install の設定
 ;; (cond
