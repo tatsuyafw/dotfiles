@@ -176,6 +176,7 @@
 (el-get-bundle emmet-mode)
 (el-get-bundle flycheck)
 (el-get-bundle sshaw/git-link)
+(el-get-bundle go-company)
 (el-get-bundle go-mode)
 (el-get-bundle groovy-emacs-mode)
 (el-get-bundle haml-mode)
@@ -437,13 +438,16 @@
             (c-set-offset 'topmost-intro-cont 0)))
 
 ;; Golang
-(when (require 'go-mode-autoloads)
-  (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
-  (custom-set-variables '(tab-width 2))
-  (setq gofmt-command "goimports")
-  (add-hook 'before-save-hook 'gofmt-before-save)
-  )
-
+(require 'go-mode)
+(require 'company-go)
+(add-hook 'go-mode-hook 'company-mode)
+(add-hook 'go-mode-hook
+          (lambda()
+            (custom-set-variables '(tab-width 2))
+            (setq gofmt-command "goimports")
+            (set (make-local-variable 'company-backends) '(company-go))
+            (company-mode)
+            (add-hook 'before-save-hook 'gofmt-before-save)))
 
 ;; Groovy
 ;; (when (require 'groovy-mode)
