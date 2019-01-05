@@ -506,6 +506,7 @@
   (tide-hl-identifier-mode +1)
   (company-mode +1)
   )
+(setq typescript-indent-level 2)
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
