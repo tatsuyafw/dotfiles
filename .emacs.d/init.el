@@ -1,6 +1,6 @@
 ;;; init.el --- emacs init script
 ;; Author: Tatsuya Hoshino
-;; Update: 2015/01/29
+;; Update: 2019/01/05
 
 ;;; Commentary:
 
@@ -174,6 +174,7 @@
 (el-get-bundle company-mode :depends (s))
 (el-get-bundle emacswiki:visual-basic-mode)
 (el-get-bundle emmet-mode)
+(el-get-bundle jacktasia/dumb-jump :depends (f))
 (el-get-bundle flycheck)
 (el-get-bundle sshaw/git-link)
 (el-get-bundle go-company)
@@ -209,6 +210,11 @@
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; dumb-jump
+(setq dumb-jump-mode t)
+(setq dumb-jump-default-project "")
+(define-key global-map (kbd "C-M-j") 'dumb-jump-go)
 
 ;; smart-newline https://github.com/ainame/smart-newline.el
 (define-key global-map (kbd "C-o") 'smart-newline)
