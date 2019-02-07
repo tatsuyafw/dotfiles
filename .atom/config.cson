@@ -1,0 +1,21 @@
+"*":
+  "block-cursor":
+    global:
+      blinkOn:
+        backgroundColor: "#ffffff"
+    mini:
+      blinkOn:
+        backgroundColor: "white"
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "spell-check"
+    ]
+    telemetryConsent: "no"
+  editor:
+    preferredLineLength: 120
+    scrollPastEnd: true
+  minimap:
+    displayCodeHighlights: false
+  welcome:
+    showOnStartup: false
