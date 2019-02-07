@@ -214,7 +214,7 @@
 ;; dumb-jump
 (setq dumb-jump-mode t)
 (setq dumb-jump-default-project "")
-(define-key global-map (kbd "C-M-n") 'dumb-jump-go)
+(define-key global-map (kbd "C-M-m") 'dumb-jump-go)
 
 ;; smart-newline https://github.com/ainame/smart-newline.el
 (define-key global-map (kbd "C-o") 'smart-newline)
