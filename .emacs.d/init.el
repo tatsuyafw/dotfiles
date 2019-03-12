@@ -172,12 +172,12 @@
 ;; el-get dependencies
 (el-get-bundle coffee-mode)
 (el-get-bundle company-mode :depends (s))
+(el-get-bundle company-go)
 (el-get-bundle emacswiki:visual-basic-mode)
 (el-get-bundle emmet-mode)
 (el-get-bundle jacktasia/dumb-jump :depends (f))
 (el-get-bundle flycheck)
 (el-get-bundle sshaw/git-link)
-(el-get-bundle go-company)
 (el-get-bundle go-mode)
 (el-get-bundle groovy-emacs-mode)
 (el-get-bundle haml-mode)
