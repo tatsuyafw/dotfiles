@@ -17,6 +17,11 @@ local DEFAULT=$'%{e[1;m%}'
 autoload colors
 colors
 
+# For iTerm
+function itermtitle {
+    echo -ne "\033]0;"$*"\007"
+}
+
 # git branch setting
 # see: http://blog.hifumi.info/mac/custom-zsh-prompt/
 autoload -Uz vcs_info
