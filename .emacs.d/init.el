@@ -177,6 +177,7 @@
 (el-get-bundle emmet-mode)
 (el-get-bundle jacktasia/dumb-jump :depends (f))
 (el-get-bundle flycheck)
+(el-get-bundle flycheck-rust)
 (el-get-bundle sshaw/git-link)
 (el-get-bundle go-mode)
 (el-get-bundle groovy-emacs-mode)
@@ -504,6 +505,8 @@
 (add-hook 'rust-mode-hook
           (lambda () (setq indent-tabs-mode nil)))
 (setq rust-format-on-save t)
+(with-eval-after-load 'rust-mode
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 ;; Slim
 (when (require 'slim-mode nil t)
