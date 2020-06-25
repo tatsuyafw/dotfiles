@@ -197,6 +197,7 @@
 (el-get-bundle pezra/rspec-mode)
 (el-get-bundle ruby-block)
 (el-get-bundle danielma/rufo.el)
+(el-get-bundle rust-mode)
 (el-get-bundle scala-mode)
 (el-get-bundle slim-mode)
 (el-get-bundle ainame/smart-newline.el)
@@ -496,6 +497,13 @@
 ;; Markdown
 (when (require 'markdown-mode nil t)
   (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode)))
+
+;; Rust
+(when (require 'rust-mode nil t)
+  (add-to-list 'auto-mode-alist '("\\.rs$" . rust-mode)))
+(add-hook 'rust-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
+(setq rust-format-on-save t)
 
 ;; Slim
 (when (require 'slim-mode nil t)
