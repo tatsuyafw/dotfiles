@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/bash -x
 
 basedir=`dirname $0`/../..
 
