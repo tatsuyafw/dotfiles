@@ -66,6 +66,13 @@
   (define-key global-map (kbd "C-z") 'undo)
   )
 
+(defun wsl-copy (start end)
+  "Copy a text using clip.exe."
+  (interactive "r")
+  (copy-region-as-kill start end)
+  (shell-command-on-region start end "clip.exe"))
+(global-set-key (kbd "C-c c")  'wsl-copy)
+
 ;; bar を非表示
 (menu-bar-mode 0)
 
