@@ -107,7 +107,7 @@ setlocal omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 
 " python3
-let g:python3_host_prog = expand('~/.anyenv/envs/pyenv/shims/python')
+let g:python3_host_prog = expand('~/.pyenv/shims/python')
 
 autocmd BufNewFile,BufRead *.go setlocal filetype=go
 autocmd FileType go setlocal tabstop=2 shiftwidth=2
