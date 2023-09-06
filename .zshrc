@@ -239,3 +239,18 @@ export XDG_CONFIG_HOME=$HOME/.config
 if command -v nvim > /dev/null; then
   alias vim=nvim
 fi
+
+# WSL
+if [[ "$(uname -r)" == *WSL* ]]; then
+  function open() {
+    if [ $# != 1 ]; then
+        explorer.exe .
+    else
+        if [ -e $1 ]; then
+            cmd.exe /c start $(wslpath -w $1) 2> /dev/null
+        else
+            echo "open: $1 : No such file or directory"
+        fi
+    fi
+  }
+fi
