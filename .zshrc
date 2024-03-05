@@ -68,6 +68,13 @@ alias rm="rm -i"
 alias tree="tree -C"
 alias ec="emacsclient"
 alias be="bundle exec"
+function gb() {
+  local branch
+  branch=$(git branch --show-current)
+  gh browse --branch "$branch"
+}
+
+alias gb="gb"
 #alias java="/usr/java/default/bin/java"
 #alias javac="/usr/java/default/bin/javac"
 
