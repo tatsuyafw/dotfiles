@@ -29,7 +29,5 @@ if [ ! -e $HOME/.config/nvim ]; then
 fi
 
 : [Info] Set up dein.vim
-tmp=$(mktemp)
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $tmp
-sh $tmp $HOME/.cache/dein
+sh -c "$(wget -O- https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 echo;
