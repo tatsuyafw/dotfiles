@@ -12,6 +12,18 @@ local AQUA=$'%{e[1;36m%}'
 local WHITE=$'%{e[1;37m%}'
 local DEFAULT=$'%{e[1;m%}'
 
+# zplug
+source ~/.zplug/init.zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "olets/zsh-abbr"
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+zplug load --verbose
+
 # set prompt
 #
 autoload colors
@@ -67,7 +79,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias tree="tree -C"
 alias ec="emacsclient"
-alias be="bundle exec"
+abbr -S be='bundle exec'
 function gb() {
   local branch
   branch=$(git branch --show-current)

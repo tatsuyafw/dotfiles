@@ -31,3 +31,7 @@ fi
 : [Info] Set up dein.vim
 sh -c "$(wget -O- https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 echo;
+
+: [Info] Set up zplug
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+echo;
