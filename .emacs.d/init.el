@@ -560,10 +560,6 @@
   (setq svn-status-verbose nil)
   (autoload 'svn-status "psvn" "Run `svn status'." t))
 
-;; Git
-(when (executable-find "git")
-  (require 'egg nil t))
-
 ;; SQL
 (eval-after-load "sql"
   (load-library "sql-indent"))
